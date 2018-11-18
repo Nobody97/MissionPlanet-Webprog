@@ -41,7 +41,7 @@
         <nav class="navbar navbar-inverse" class="navbar" id="navID">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Mission Planet</a>
+          <a class="navbar-brand" href="index.jsp">Mission Planet</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="meinKonto.html">Mein Konto<span class="caret"></span></a>
