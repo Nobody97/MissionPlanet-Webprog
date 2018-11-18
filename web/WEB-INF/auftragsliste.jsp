@@ -63,16 +63,16 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
         </ul>
       </div>
     </nav>
+
     <!-- Hauptfenster der Anwendung -->
         <div class="hauptfenster">
           <h1 class="fenster-titel">Auftrag erstellen</h1>
           <a href="auftragErstellen.jsp"><button type="button" class="btn btn-default">Neuen Auftrag erstellen</button></a>
         </div>
-
 
     </body>
 </html>

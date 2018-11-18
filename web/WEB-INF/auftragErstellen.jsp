@@ -12,6 +12,7 @@
         <title>Mission Planet - Menü</title>
         <script src="index.js"></script>
         <link rel="stylesheet" type="text/css" href="index.css" />
+        <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -67,7 +68,7 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -77,29 +78,24 @@
           <h1 class="fenster-titel">Auftrag erstellen</h1>
         </div>
 
-        <form method="POST">
+        Titel: <input type="text" name="title" id="title">
+        Anzahl: <input type="text" name="number" id="number">
+        Beschreibung: <input type="text" name="description" id="description">
 
-          <div class="input-group">
-            <span class="input-group-addon">Titel</span>
-            <input id="msg" type="text" class="form-control" name="title"  placeholder="Titel des Auftrags">
-          </div>
-        <br>
-          <div class="input-group">
-            <span class="input-group-addon">Anzahl</span>
-            <input id="msg" type="text" class="form-control" pattern="[0-9]" name="number"   placeholder="Anzahl der benötigten Personen">
-          </div>
-        <br>
-          <div class="input-group">
-            <span class="input-group-addon">Beschreibung</span>
-            <input id="msg" type="text" class="form-control" name="description"  placeholder="Beschreibung des Auftrages">
-          </div>
-        <br>
+        <button onclick="addRow();">Add Row</button>
 
-          <div class="container">
-              <a href="#"><button type="submit" class="btn btn-info btn-block" data-toggle="tooltip" title="JUST DO IT"> Auftrag Erstellen</button></a>
-          </div>
-          
-        </form>
+
+        <div class="table">
+          <table border="1">
+            <tr>
+              <th>Titel</th>
+              <th>Anzhl</th>
+              <th>Beschreibung</th>
+            </tr>
+
+
+          </table>
+        </div>
 
         <script>
             $(document).ready(function(){
@@ -107,29 +103,36 @@
             });
         </script>
 
-        <% if (request.getMethod().equals("POST")) { %>
 
-        <div class="container" class="table table-hover">
-          <h2 id="titelAuftragsliste">Aufträge</h2>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Titel</th>
-                <th>Anzahl der Personen</th>
-                <th>Beschreibung</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= request.getParameter("title")%></td>
-                <td><%= request.getParameter("number")%></td>
-                <td><%= request.getParameter("description")%></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
-        <% } %>
+        <script>
+
+            function addRow() {
+
+              //get input values
+              var title = document.getElementById('title').value;
+              var number = document.getElementById('number').value;
+              var description = document.getElementById('description').value;
+
+              //get the html table
+              var table = document.getElementsByTagName('table')[0];
+
+              //add new empty row to table
+              var newRow = table.insertRow(1);
+
+              //add cells to row
+              var cel1 = newRow.insertCell(0);
+              var cel2 = newRow.insertCell(1);
+              var cel3 = newRow.insertCell(2);
+
+              //add values to the cells
+              cel1.innerHTML = title;
+              cel2.innerHTML = number;
+              cel3.innerHTML = description;
+
+
+            }
+        </script>
 
 
     </body>

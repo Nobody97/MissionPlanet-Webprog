@@ -22,7 +22,7 @@
 
        body {
            font-family: sans-serif;
-           font-size: 12pt;
+           font-size: 12px;
            background: url(Logo.jpeg);
            margin: 0;
            padding: 0;
@@ -124,8 +124,8 @@
            <p>Passwort</p>
            <input type="password" name="" placeholder="Enter password">
            <!--<input type="submit" name="" value="Login"> -->
-           <a href="index.html"><button type="button" class="btn btn-primary btn-block">Anmelden</button><br></a>
-           <a href="kontoAnlegen.html"> Don´t have an account?</a>
+           <a href="index.jsp"><button type="button" class="btn btn-primary btn-block">Anmelden</button><br></a>
+           <a href="kontoAnlegen.jsp"> Don´t have an account?</a>
          </form>
      </div>
    </body>
